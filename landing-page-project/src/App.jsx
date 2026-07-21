@@ -6,7 +6,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./index.css";
-import Question from "./components/quistion";
+import Question from "./components/Quistion";
 
 
 function App() {

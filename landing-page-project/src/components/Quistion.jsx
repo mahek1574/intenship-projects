@@ -29,7 +29,7 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export default function Quistion() {
   const [active, setActive] = useState(0);
 
   return (
