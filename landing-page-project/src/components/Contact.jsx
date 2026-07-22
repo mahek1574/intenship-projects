@@ -52,12 +52,12 @@ export default function Contact() {
           "
         >
 
-          
+
 
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="max-w-xl mx-auto lg:ml-auto lg:mr-4 w-full"
           >
@@ -91,7 +91,7 @@ export default function Contact() {
                   </p>
 
                   <p className="mt-1 text-[#17221B] font-semibold">
-                  hello@agency.com
+                    hello@agency.com
                   </p>
 
                 </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                   </p>
 
                   <p className="mt-1 text-[#17221B] font-semibold">
-                  +1 (555) 234-5678
+                    +1 (555) 234-5678
                   </p>
 
                 </div>
@@ -142,7 +142,7 @@ export default function Contact() {
 
           </motion.div>
 
-        
+
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -160,7 +160,7 @@ export default function Contact() {
               >
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                  <div>
+                  <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">
                       Your Name
                     </label>
@@ -228,7 +228,7 @@ export default function Contact() {
               </form>
             </div>
           </motion.div>
-                  </div>
+        </div>
       </div>
     </section>
   );
