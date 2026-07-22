@@ -4,6 +4,8 @@ import {
   Mail,
   Phone,
   MapPin,
+  Send,
+  ChevronRight,
 } from "lucide-react";
 import {
   FaFacebookF,
@@ -29,164 +31,197 @@ export default function Footer() {
     "Digital Marketing",
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="relative bg-black text-gray-300 border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-[#17221B] text-gray-300 overflow-hidden border-t border-[#BCCFC4]/20">
+      
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#6B8F7B]/50 to-transparent" />
 
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+    
+      <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#6B8F7B]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#BCCFC4]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-16"
-      >
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-14 pb-10 relative z-10">
+        
+    
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 pb-10 border-b border-white/10 text-center lg:text-left">
           
-          <div className="lg:col-span-2">
-
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-10 brightness-0 invert hover:scale-105 transition duration-300"
-            />
-
-            <p className="mt-6 max-w-md leading-7 text-gray-400">
+          
+          <div className="max-w-xl">
+            <a href="#home" className="inline-block">
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-9 brightness-0 invert hover:opacity-90 transition duration-300 mx-auto lg:mx-0"
+              />
+            </a>
+            <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
               We craft premium digital experiences that help ambitious brands
-              grow faster through modern design, strategic development and
-              powerful marketing solutions.
+              grow faster through modern design, strategic development, and
+              AI-powered marketing.
             </p>
-
-            <div className="flex items-center gap-4 mt-8">
-
-              <a
-                href="#"
-                className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
-              >
-                <FaFacebookF />
-              </a>
-
-              <a
-                href="#"
-                className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
-              >
-                <FaInstagram />
-              </a>
-
-              <a
-                href="#"
-                className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
-              >
-              <FaLinkedinIn />
-              </a>
-
-              <a
-                href="#"
-                className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
-              >
-                <FaXTwitter />
-              </a>
-
-            </div>
-
           </div>
 
         
-          <div>
+          <div className="flex flex-col items-center lg:items-end shrink-0">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
+              Connect With Us
+            </p>
+            <div className="flex items-center gap-3 justify-center">
+              {[
+                { icon: <FaFacebookF size={15} />, href: "#" },
+                { icon: <FaInstagram size={15} />, href: "#" },
+                { icon: <FaLinkedinIn size={15} />, href: "#" },
+                { icon: <FaXTwitter size={15} />, href: "#" },
+              ].map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-[#6B8F7B] hover:border-[#6B8F7B] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
 
-            <h3 className="text-white font-semibold text-lg mb-6">
+        </div>
+
+        
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 py-10 border-b border-white/10 text-center md:text-left">
+          
+        
+          <div className="md:col-span-3">
+            <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
               Quick Links
             </h3>
-
-            <ul className="space-y-4">
+            <ul className="space-y-2.5 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                    className="group inline-flex items-center justify-center md:justify-start gap-1.5 text-gray-400 hover:text-white transition-colors duration-300"
                   >
-                    {link.name}
+                    <ChevronRight size={13} className="text-[#6B8F7B] hidden md:inline-block opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    <span>{link.name}</span>
                   </a>
                 </li>
               ))}
             </ul>
-
           </div>
-                
-          <div>
 
-            <h3 className="text-white font-semibold text-lg mb-6">
-              Services
+      
+          <div className="md:col-span-3">
+            <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
+              Our Services
             </h3>
-
-            <ul className="space-y-4">
+            <ul className="space-y-2.5 text-sm">
               {services.map((service) => (
-                <li
-                  key={service}
-                  className="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer"
-                >
-                  {service}
+                <li key={service}>
+                  <a
+                    href="#services"
+                    className="group inline-flex items-center justify-center md:justify-start gap-1.5 text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    <ChevronRight size={13} className="text-[#6B8F7B] hidden md:inline-block opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    <span>{service}</span>
+                  </a>
                 </li>
               ))}
             </ul>
+          </div>
 
+        
+          <div className="md:col-span-3">
+            <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
+              Get In Touch
+            </h3>
+            <div className="space-y-3 text-sm text-gray-400 flex flex-col items-center md:items-start">
+              <div className="flex items-center gap-2.5">
+                <Mail size={15} className="text-[#6B8F7B] shrink-0" />
+                <a href="mailto:hello@agency.com" className="hover:text-white transition-colors">
+                  hello@agency.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone size={15} className="text-[#6B8F7B] shrink-0" />
+                <a href="tel:+1234567890" className="hover:text-white transition-colors">
+                  +1 (555) 234-5678
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <MapPin size={15} className="text-[#6B8F7B] shrink-0" />
+                <span>123 Innovation Way, Suite 400</span>
+              </div>
+            </div>
+          </div>
+
+        
+          <div className="md:col-span-3 flex flex-col items-center md:items-start">
+            <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
+              Newsletter
+            </h3>
+            <p className="text-xs text-gray-400 mb-3 max-w-xs text-center md:text-left">
+              Subscribe for marketing insights and project updates.
+            </p>
+            <form onSubmit={(e) => e.preventDefault()} className="relative w-full max-w-xs md:max-w-full">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full bg-white/5 border border-white/10 rounded-full py-2.5 pl-4 pr-11 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#6B8F7B] transition duration-300"
+              />
+              <button
+                type="submit"
+                aria-label="Subscribe"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#6B8F7B] hover:bg-[#597867] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
+              >
+                <Send size={13} />
+              </button>
+            </form>
           </div>
 
         </div>
 
-    
       
-              
-        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 text-center sm:text-left">
+          <p>
+            © {new Date().getFullYear()} Digital Agency. All rights reserved.
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-sm text-gray-500 text-center md:text-left"
-          >
-            © {new Date().getFullYear()} Landing Page Project. All Rights
-            Reserved.
-          </motion.p>
-
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
-
-            <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-300"
-            >
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            <a href="#" className="hover:text-white transition-colors duration-300">
               Privacy Policy
             </a>
-
-            <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-300"
-            >
-              Terms & Conditions
+            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-gray-600 self-center"></span>
+            <a href="#" className="hover:text-white transition-colors duration-300">
+              Terms of Service
             </a>
-
+            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-gray-600 self-center"></span>
+            <a href="#" className="hover:text-white transition-colors duration-300">
+              Cookies Settings
+            </a>
           </div>
-
         </div>
 
-      </motion.div>
+      </div>
 
-      
+      {/* Floating Back to Top Button */}
       <button
-        onClick={() =>
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          })
-        }
-        className="fixed bottom-6 right-6 z-50 h-12 w-12 rounded-full bg-white text-black shadow-xl flex items-center justify-center hover:scale-110 transition-all duration-300"
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        className="fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-[#6B8F7B] text-white shadow-lg flex items-center justify-center hover:bg-[#597867] hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20"
       >
-        <ArrowUp size={20} />
+        <ArrowUp size={18} />
       </button>
-
     </footer>
   );
 }
