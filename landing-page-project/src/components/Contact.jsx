@@ -91,7 +91,7 @@ export default function Contact() {
                   </p>
 
                   <p className="mt-1 text-[#17221B] font-semibold">
-                    123@gmail.com
+                  hello@agency.com
                   </p>
 
                 </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                   </p>
 
                   <p className="mt-1 text-[#17221B] font-semibold">
-                    +91 1234567890
+                  +1 (555) 234-5678
                   </p>
 
                 </div>
@@ -131,7 +131,7 @@ export default function Contact() {
                   </p>
 
                   <p className="mt-1 text-[#17221B] font-semibold">
-                    Ahmedabad, India
+                    alberta,canada
                   </p>
 
                 </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      placeholder="123@example.com"
+                      placeholder="123@gmail.com"
                       className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-3.5 text-sm text-[#17221B] placeholder:text-gray-400 focus:border-[#6B8F7B] focus:ring-2 focus:ring-[#6B8F7B]/20 focus:outline-none transition-all duration-300"
                     />
                   </div>
