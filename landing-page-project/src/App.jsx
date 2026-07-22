@@ -19,8 +19,7 @@ function App() {
       <Testimonials />
       <Question/>
       <Contact/>
-
-      <Footer/>
+       <Footer/>
 
     </>
   );

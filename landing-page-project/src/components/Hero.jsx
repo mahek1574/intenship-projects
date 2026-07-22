@@ -1,4 +1,5 @@
 import heroImage from "../assets/hero.jpg";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -8,7 +9,12 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          <div className="lg:col-span-7 relative z-10 text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 relative z-10 text-center lg:text-left"
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#BCCFC4]/30 shadow-sm hover:border-[#6B8F7B]/50 transition-colors duration-300">
               <span className="w-2.5 h-2.5 rounded-full bg-[#6B8F7B] animate-ping"></span>
               <span className="text-xs font-semibold uppercase tracking-wider text-[#4F6658]">
@@ -31,18 +37,22 @@ const Hero = () => {
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="#contact"
-                className="px-8 py-4 rounded-full bg-[#17221B] text-white font-semibold shadow-lg hover:bg-[#6B8F7B] hover:shadow-xl transition-all duration-300 active:scale-95 text-sm"
+                className="px-8 py-4 rounded-full bg-[#17221B] text-white font-semibold shadow-lg hover:bg-[#6B8F7B] hover:shadow-xl transition-colors duration-300 text-sm"
               >
                 Get Free Strategy Call
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="#services"
-                className="px-8 py-4 rounded-full bg-white border border-[#BCCFC4]/50 text-[#17221B] font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 text-sm"
+                className="px-8 py-4 rounded-full bg-white border border-[#BCCFC4]/50 text-[#17221B] font-semibold hover:bg-gray-50 hover:border-gray-300 transition-colors duration-300 text-sm"
               >
                 Explore Services
-              </a>
+              </motion.a>
             </div>
 
             <div className="mt-12 pt-8 border-t border-gray-100 flex items-center justify-center lg:justify-start gap-12">
@@ -64,9 +74,14 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end mt-10 lg:mt-0">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 relative flex justify-center lg:justify-end mt-10 lg:mt-0"
+          >
             <div className="relative w-full max-w-md">
               <div className="absolute -inset-4 bg-gradient-to-tr from-[#6B8F7B]/30 to-[#BCCFC4]/40 rounded-[40px] rotate-3 blur-xs"></div>
 
@@ -96,7 +111,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

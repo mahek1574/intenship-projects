@@ -1,4 +1,5 @@
 import { Code, Search, Share2, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Services() {
   const services = [
@@ -27,7 +28,13 @@ export default function Services() {
   return (
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="text-center max-w-3xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto"
+        >
           <span className="text-xs font-bold uppercase tracking-widest text-[#6B8F7B] bg-[#6B8F7B]/10 px-4 py-1.5 rounded-full">
             Our Services
           </span>
@@ -37,15 +44,20 @@ export default function Services() {
           <p className="mt-4 text-gray-500 text-base max-w-2xl mx-auto">
             Tailored digital solutions engineered to acquire customers and drive measurable ROI.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xs hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-2xl bg-[#6B8F7B]/10 text-[#6B8F7B] flex items-center 
                 justify-center group-hover:bg-[#6B8F7B] group-hover:text-white transition-colors
@@ -59,7 +71,7 @@ export default function Services() {
                 <p className="mt-3 text-sm text-gray-500 leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

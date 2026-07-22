@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Testimonials() {
   const testimonials = [
@@ -40,7 +41,13 @@ export default function Testimonials() {
       <div className="absolute bottom-24 right-0 w-80 h-80 bg-[#BCCFC4]/10 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="text-center max-w-3xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto"
+        >
           <span className="text-xs font-bold uppercase tracking-widest text-[#6B8F7B] bg-[#6B8F7B]/10 px-4 py-1.5 rounded-full">
             Testimonials
           </span>
@@ -54,13 +61,18 @@ export default function Testimonials() {
             to use. Here's what some of our clients had to say about working
             with us.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           {testimonials.map((t, index) => (
-            <div
+            <motion.div
               key={index}
-              className="relative bg-white rounded-[30px] border border-gray-100 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              whileHover={{ y: -10 }}
+              className="relative bg-white rounded-[30px] border border-gray-100 p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col"
             >
               <Quote className="absolute top-6 right-6 w-12 h-12 text-[#6B8F7B]/8" />
 
@@ -95,7 +107,7 @@ export default function Testimonials() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
