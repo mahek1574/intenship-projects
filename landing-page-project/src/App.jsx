@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./index.css";
 import Question from "./components/Quistion";
+import ClientLogos from "./components/Clientlogos";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <ClientLogos/>
       <Services />
       <Portfolio />
       <Testimonials />

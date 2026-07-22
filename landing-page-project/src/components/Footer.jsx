@@ -40,25 +40,19 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#17221B] text-gray-300 overflow-hidden border-t border-[#BCCFC4]/20">
-      
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#6B8F7B]/50 to-transparent" />
 
-    
       <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#6B8F7B]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#BCCFC4]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-14 pb-10 relative z-10">
-        
-    
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 pb-10 border-b border-white/10 text-center lg:text-left">
-          
-          
           <div className="max-w-xl">
             <a href="#home" className="inline-block">
               <img
                 src={logo}
                 alt="Logo"
-                className="h-9 brightness-0 invert hover:opacity-90 transition duration-300 mx-auto lg:mx-0"
+                className="h-12 sm:h-14 lg:h-16 w-auto object-contain hover:opacity-90 transition duration-300 mx-auto lg:mx-0"
               />
             </a>
             <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
@@ -68,7 +62,6 @@ export default function Footer() {
             </p>
           </div>
 
-        
           <div className="flex flex-col items-center lg:items-end shrink-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
               Connect With Us
@@ -90,13 +83,9 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
         </div>
 
-        
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 py-10 border-b border-white/10 text-center md:text-left">
-          
-        
           <div className="md:col-span-3">
             <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
@@ -117,7 +106,6 @@ export default function Footer() {
             </ul>
           </div>
 
-      
           <div className="md:col-span-3">
             <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
@@ -138,7 +126,6 @@ export default function Footer() {
             </ul>
           </div>
 
-        
           <div className="md:col-span-3">
             <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
@@ -159,12 +146,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <MapPin size={15} className="text-[#6B8F7B] shrink-0" />
-                <span>123 Innovation Way, Suite 400</span>
+                <span>Alberta,canada</span>
               </div>
             </div>
           </div>
 
-        
           <div className="md:col-span-3 flex flex-col items-center md:items-start">
             <h3 className="text-white font-bold text-base tracking-wide mb-4 flex items-center justify-center md:justify-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#6B8F7B]"></span>
@@ -188,10 +174,8 @@ export default function Footer() {
               </button>
             </form>
           </div>
-
         </div>
 
-      
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} Digital Agency. All rights reserved.
@@ -211,10 +195,8 @@ export default function Footer() {
             </a>
           </div>
         </div>
-
       </div>
 
-      {/* Floating Back to Top Button */}
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
@@ -224,4 +206,4 @@ export default function Footer() {
       </button>
     </footer>
   );
-}
+}  
