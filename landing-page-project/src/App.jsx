@@ -1,30 +1,34 @@
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import "./index.css";
-import Question from "./components/Quistion";
-import ClientLogos from "./components/Clientlogos";
+import Preloader from "./components/Preloader";
+import Scrolltop from "./components/Scrolltop";
 
+import Home from "./pages/Home";
+import ServiceDetail from "./pages/ServiceDetail";
 
-function App() {
+export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <Hero />
-      <ClientLogos/>
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Question/>
-      <Contact/>
-       <Footer/>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
 
+      {!isLoading && (
+        <Router>
+          <Scrolltop />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
+          </Routes>
+          <Footer />
+        </Router>
+      )}
     </>
   );
 }
-
-export default App;
